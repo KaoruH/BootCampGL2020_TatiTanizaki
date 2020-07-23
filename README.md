@@ -1,3 +1,1 @@
-Ejercicios del BootCamp Global Logic.
-
-S2
+Ejercicios del BootCamp Global Logic 2020.
