@@ -21,7 +21,5 @@ public class Empleado {
     public static void setNombre(String nombre) {
         Empleado.nombre = nombre;
     }
-
-
     
 }
