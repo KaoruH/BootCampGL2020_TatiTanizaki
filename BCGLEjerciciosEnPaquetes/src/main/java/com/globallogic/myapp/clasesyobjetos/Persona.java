@@ -2,9 +2,9 @@ package com.globallogic.myapp.clasesyobjetos;
 
 public class Persona {
 
-    public Persona(int dni){
-        this.dni = dni;
-    }
+    // public Persona(int dni){
+    //     this.dni = dni;
+    // }
 
     private String nombre;
 

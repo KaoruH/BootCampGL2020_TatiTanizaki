@@ -1,10 +1,11 @@
 package com.globallogic.myapp.clasesyobjetos;
 
-public class Empleado extends Persona{
 
-    public Empleado(int dni) {
-        super(dni);
-    }
+public class Empleado extends Persona implements Comparable<Empleado> {
+
+    // public Empleado(int dni) {
+    //     super(dni);
+    // }
 
     private int id;
 
@@ -48,40 +49,41 @@ public class Empleado extends Persona{
         this.tipoIRPF = tipoIRPF;
     }
 
-    public double complementoPorHorasExtras(){
+    public double complementoPorHorasExtras() {
 
         return this.horasExtras * Empleado.importeHoraExtra;
 
     }
 
-    public double sueldoBruto(){
+    public double sueldoBruto() {
 
         return complementoPorHorasExtras() + this.sueldoBase;
     }
 
-    public double retencionesIRPF(){
+    public double retencionesIRPF() {
 
         double iRPFFinal = this.tipoIRPF;
 
         if (this.getCasado() == 'S') {
 
             iRPFFinal -= 2;
-            
-        } 
+
+        }
 
         if (this.getNumeroDeHijos() != 0) {
 
             iRPFFinal -= this.getNumeroDeHijos();
-            
+
         }
 
-        return sueldoBruto() * (iRPFFinal/100);
+        return sueldoBruto() * (iRPFFinal / 100);
 
     }
 
-    public String toString(){
+    public String toString() {
 
-        return id + " " + getNombre() + "\nSueldo Base: " + sueldoBase + "/nHoras Extras: " + horasExtras + "\ntipo IRPF: " + tipoIRPF + "\nCasado: " + getCasado() + "\nNúmero de Hijos: " + getNumeroDeHijos();
+        return id + " " + getNombre() + "\nSueldo Base: " + sueldoBase + "\nHoras Extras: " + horasExtras
+                + "\ntipo IRPF: " + tipoIRPF + "\nCasado: " + getCasado() + "\nNúmero de Hijos: " + getNumeroDeHijos();
 
     }
 
@@ -92,5 +94,18 @@ public class Empleado extends Persona{
     public static void setImporteHoraExtra(double importeHoraExtra) {
         Empleado.importeHoraExtra = importeHoraExtra;
     }
-    
+
+    @Override
+    public int compareTo(Empleado otroEmpleado) {
+        if (sueldoBruto() < otroEmpleado.sueldoBruto()) {
+            return -1;
+        }
+        if (sueldoBruto() > otroEmpleado.sueldoBruto()) {
+            return 1;
+        }
+        return 0;
+    }
+
+
+
 }
