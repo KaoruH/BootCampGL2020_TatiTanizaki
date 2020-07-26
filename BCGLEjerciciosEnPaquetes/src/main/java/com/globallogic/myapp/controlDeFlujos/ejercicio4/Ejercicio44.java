@@ -1,6 +1,6 @@
 package com.globallogic.myapp.controlDeFlujos.ejercicio4;
 
-public class ejercicio4 {
+public class Ejercicio44 {
 
     public static void main(String[] args) {
         

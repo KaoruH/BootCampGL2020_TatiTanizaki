@@ -2,7 +2,7 @@ package com.globallogic.myapp.controlDeFlujos.ejercicio1;
 
 // import java.util.Scanner;
 
-public class ejercicio1 {
+public class Ejercicio41 {
 
     // public static Scanner keyboard = new Scanner(System.in);
 
