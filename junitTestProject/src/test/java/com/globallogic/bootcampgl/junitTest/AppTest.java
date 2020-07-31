@@ -17,7 +17,7 @@ class AppTest {
     @DisplayName("Ejercicio 1.1")
     void test(){
 
-        assertEquals("Test", "Test");
+        assertEquals("Test", "Teste");
     }
 
     @Test
@@ -28,7 +28,7 @@ class AppTest {
         String string2 = "soyIgual";
         String string3 = "noSoyIgual";
 
-        assertTrue(string1.equals(string2) && !string1.equals(string3));
+        assertTrue(!string1.equals(string2) && string1.equals(string3));
         
     }
 
@@ -36,19 +36,19 @@ class AppTest {
     @DisplayName("Ejercicio 1.3")
     void test3(){
 
-       assertTrue(23 > 12);
-       assertFalse(25 > 27);
+       assertTrue(23 < 12);
+       assertFalse(25 < 27);
 
     }
 
     @Test
     @DisplayName("Ejercicio 1.4")
     void test4(){
-        Long longTeste = null;
+        Long longTeste = 1L;
 
         assertNull(longTeste);
 
-        longTeste = 1L;
+        longTeste = null;
 
         assertNotNull(longTeste);
     }
