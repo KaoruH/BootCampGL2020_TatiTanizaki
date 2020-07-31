@@ -52,5 +52,44 @@ class AppTest {
 
         assertNotNull(longTeste);
     }
+
+    @Test
+    @DisplayName("Ejercicio 1.6")
+    void test5(){
+
+        assertTrue(suma(5, 8) == 13);
+
+        assertFalse(suma(2, 3) == 9, "El resultado está mal: ");
+    }
+
+    public int suma(int numero1, int numero2){
+
+        return numero1 + numero2;
+    }
+
+    @Test
+    @DisplayName("Ejercicio 1.7")
+    void test6(){
+        
+        assertTrue(metodoDelTest6(8), "Esta variable no es true");
+
+        assertFalse(metodoDelTest6(2), "Esta variable no es");
+    }
+
+    public boolean metodoDelTest6(int numero){
+
+        for (int i = 0; i <= numero; i++) {
+
+            if (i == 3) {
+
+                return true;
+                
+            }
+            
+        }
+        return false;
+    }
+
+    
     
 }
