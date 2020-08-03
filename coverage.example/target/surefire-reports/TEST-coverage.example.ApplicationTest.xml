@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="coverage.example.ApplicationTest" time="0.188" tests="8" errors="1" skipped="0" failures="0">
+  <properties/>
+  <testcase name="testeStar1" classname="coverage.example.ApplicationTest" time="0.039"/>
+  <testcase name="testeStar2" classname="coverage.example.ApplicationTest" time="0.008">
+    <error message="Unresolved compilation problem: &#10;	&apos;&lt;&gt;&apos; operator is not allowed for source level below 1.7&#10;" type="java.lang.Error"><![CDATA[java.lang.Error: 
+Unresolved compilation problem: 
+	'<>' operator is not allowed for source level below 1.7
+
+	at coverage.example.ApplicationTest.testeStar2(ApplicationTest.java:88)
+]]></error>
+  </testcase>
+  <testcase name="testeStar3" classname="coverage.example.ApplicationTest" time="0.002"/>
+  <testcase name="testMain" classname="coverage.example.ApplicationTest" time="0.004"/>
+  <testcase name="testePlanet1" classname="coverage.example.ApplicationTest" time="0.002"/>
+  <testcase name="testePlanet2" classname="coverage.example.ApplicationTest" time="0.001"/>
+  <testcase name="testMainPorLos100" classname="coverage.example.ApplicationTest" time="0.008"/>
+  <testcase name="testeGalaxy1" classname="coverage.example.ApplicationTest" time="0.019"/>
+</testsuite>

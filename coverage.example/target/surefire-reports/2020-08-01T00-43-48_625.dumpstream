@@ -1,0 +1,57 @@
+# Created at 2020-08-01T00:43:49.552
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+
+# Created at 2020-08-01T00:43:49.554
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+# Created at 2020-08-01T00:43:49.554
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+# Created at 2020-08-01T00:43:49.555
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+# Created at 2020-08-01T00:43:49.556
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+
+# Created at 2020-08-01T00:43:49.557
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndStartAgent(InstrumentationImpl.java:513)
+
+# Created at 2020-08-01T00:43:49.557
+	at java.instrument/sun.instrument.InstrumentationImpl.loadClassAndCallPremain(InstrumentationImpl.java:525)
+
+# Created at 2020-08-01T00:43:49.559
+Caused by: java.lang.RuntimeException: Class java/util/UUID could not be instrumented.
+
+# Created at 2020-08-01T00:43:49.560
+	at org.jacoco.agent.rt.internal_6da5971.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:140)
+
+# Created at 2020-08-01T00:43:49.560
+	at org.jacoco.agent.rt.internal_6da5971.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:101)
+
+# Created at 2020-08-01T00:43:49.561
+	at org.jacoco.agent.rt.internal_6da5971.PreMain.createRuntime(PreMain.java:55)
+
+# Created at 2020-08-01T00:43:49.561
+	at org.jacoco.agent.rt.internal_6da5971.PreMain.premain(PreMain.java:47)
+
+# Created at 2020-08-01T00:43:49.561
+	... 6 more
+
+# Created at 2020-08-01T00:43:49.562
+Caused by: java.lang.NoSuchFieldException: $jacocoAccess
+
+# Created at 2020-08-01T00:43:49.564
+	at java.base/java.lang.Class.getField(Class.java:1999)
+
+# Created at 2020-08-01T00:43:49.566
+	at org.jacoco.agent.rt.internal_6da5971.core.runtime.ModifiedSystemClassRuntime.createFor(ModifiedSystemClassRuntime.java:138)
+
+# Created at 2020-08-01T00:43:49.567
+	... 9 more
+
+# Created at 2020-08-01T00:43:49.568
+*** java.lang.instrument ASSERTION FAILED ***: "result" with message agent load/premain call failed at ./src/java.instrument/share/native/libinstrument/JPLISAgent.c line: 422
+
+# Created at 2020-08-01T00:43:49.748
+/bin/sh: line 1:  2632 Abort trap: 6           /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/bin/java -javaagent:/Users/TatiTanizaki/.m2/repository/org/jacoco/org.jacoco.agent/0.7.7.201606060606/org.jacoco.agent-0.7.7.201606060606-runtime.jar=destfile=/Users/TatiTanizaki/Documents/GLBootCamp/Repos/BootCampGL2020_TatiTanizaki/coverage.example/target/jacoco.exec -jar /Users/TatiTanizaki/Documents/GLBootCamp/Repos/BootCampGL2020_TatiTanizaki/coverage.example/target/surefire/surefirebooter11219732990896401191.jar /Users/TatiTanizaki/Documents/GLBootCamp/Repos/BootCampGL2020_TatiTanizaki/coverage.example/target/surefire 2020-08-01T00-43-48_625-jvmRun1 surefire15046838654535624994tmp surefire_014524324802871758375tmp
+

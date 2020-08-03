@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: coverage.example.ApplicationTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.188 s <<< FAILURE! - in coverage.example.ApplicationTest
+testeStar2  Time elapsed: 0.008 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	'<>' operator is not allowed for source level below 1.7
+
+	at coverage.example.ApplicationTest.testeStar2(ApplicationTest.java:88)
+
