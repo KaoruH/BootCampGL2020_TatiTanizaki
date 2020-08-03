@@ -85,7 +85,7 @@ class ApplicationTest {
 		
 		star.setName("Sun");
 		
-		List<Planet> planets = new ArrayList<>();
+		List<Planet> planets = new ArrayList<Planet>();
 		
 		Planet planet = new Planet();
 		
