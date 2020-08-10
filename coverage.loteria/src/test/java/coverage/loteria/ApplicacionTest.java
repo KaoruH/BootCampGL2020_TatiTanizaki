@@ -6,29 +6,35 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Random;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import coverage.loteria.model.CartonGenerator;
 
+@ExtendWith(MockitoExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ApplicacionTest {
 	
-    CartonGenerator cartongenerator = null;
+    CartonGenerator cartonGenerator = null;
 	
-		
 	Loteria loteria = null;
-	
 	
 	
 	@BeforeAll
 	void init() {
 		
-        cartongenerator = new CartonGenerator();
+        cartonGenerator = new CartonGenerator();
 		
 		
-		loteria = new Loteria(5F, 9, cartongenerator);
+		loteria = new Loteria(5F, 9, cartonGenerator);
 		
 		
 	}
@@ -54,7 +60,7 @@ public class ApplicacionTest {
 	@Test
 	void test4() {
 		
-		assertNotNull(cartongenerator.isGanador());
+		assertNotNull(cartonGenerator.isGanador());
 	}
 	
 	@Test
@@ -70,9 +76,47 @@ public class ApplicacionTest {
 	}
 	
 	@Test
-	void test7() {
+	void noUniqueWinner() {
 		
 		assertFalse(loteria.hayGanadorUnico());
 	}
+	
+	@Mock
+	CartonGenerator cGMock;
+	
+	@Test
+	void oneWinner() {
+		
+		Mockito.when(cGMock.isGanador()).thenReturn(true, false);
+		
+		loteria = new Loteria(9F, 1100, cGMock);
+
+		loteria.jugada();
+		
+		assertTrue(loteria.hayGanadorUnico());
+		
+		
+	}
+	
+	@InjectMocks
+	CartonGenerator cGInjectMock;
+	
+	@Mock
+	Random random;
+	
+	@Test
+	void fourWinners() {
+		
+		Mockito.when(random.nextInt()).thenReturn(1, 1, 1, 1, 0);
+		
+		Loteria loteria = new Loteria(9F, 1100, cGInjectMock);
+		loteria.jugada();
+		
+		assertTrue(loteria.hayCuadrupleGanador()); 
+		
+	}
+	
+	
+	
 
 }
